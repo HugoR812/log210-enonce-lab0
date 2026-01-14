@@ -7,14 +7,14 @@ skinparam defaultfontname Verdana
 title RDCU pour redémarrerJeu
 
 
--> ":JeuDeDes" : redémarrerJeu()
+-> ":JeuDeDes" : redemarrerJeu()
 note right
   selon Contôleur
   (jeuDeDés est
   l'objet racine)
 end note
 
-":JeuDeDes" -> "joueurs:\nMap<String,Joueur>" : clear()
+":JeuDeDes" -> "joueurs:\nMap<String, Joueur>" : clear()
 note right
   selon expert
 end note
