@@ -8,7 +8,7 @@ const request = require('supertest');
 describe('GET /api/v1/jeu/redemarrerJeu', () => {
 
   it("GET /api/v1/jeu/redemarrerJeu retourne 200", async () => {
-    const response = await request(app).get("/api/v1/jeu/redemarrerJeu");
+    const response = await request(app).get('/api/v1/jeu/redemarrerJeu');
     expect(response.status).toBe(200);
   });
 
