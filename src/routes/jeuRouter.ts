@@ -1,6 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { JeuDeDes } from '../core/jeuDeDes';
 import { InvalidParameterError } from '../core/errors/invalidParameterError';
+import { Joueur } from '../core/joueur';
 
 export class JeuRouter {
   private _router: Router;
@@ -107,6 +108,28 @@ export class JeuRouter {
   }
 
   /**
+  * Redémarrer jeu
+  */
+  public redemarrerJeu(req: Request, res: Response, next: NextFunction) {
+    try {
+      // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
+      this._controleurJeu.redemarrerJeu();
+
+      req.flash('info', `L'application redémarre`);
+
+      res.status(200)
+        .json({
+          message: 'Success',
+          status: res.status,
+          Joueur: JSON.parse(this._controleurJeu.joueurs)
+        });
+    } catch (error) {
+      // console.error(error);
+      this._errorCode500(error, req, res);
+    }
+  }
+
+  /**
      * Take each handler, and attach to one of the Express.Router's
      * endpoints.
      */
@@ -114,7 +137,8 @@ export class JeuRouter {
     this._router.post('/demarrerJeu', this.demarrerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     this._router.get('/jouer/:nom', this.jouer.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     this._router.get('/terminerJeu/:nom', this.terminerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-  }
+    this._router.get('/redemarrerJeu', this.redemarrerJeu.bind(this));
+    }
 
 }
 
