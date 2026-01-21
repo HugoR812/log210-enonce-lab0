@@ -13,4 +13,5 @@ Plus tard dans le semestre, **si votre équipe porte un manque de performance à
 
 Mettez votre réponse (environ 300 mots) ci-dessous:
 
+Lorsqu'il y a une personne qui ne fait pas son travail ou ne se présente pas aux réunions je le confronte le plus rapidement possible. Ça peut arriver d'arriver en retard, comme lorsque j'étais pris dans le traffic lors de mon laboratoire en physique. Par contre, j'ai avisé mon équipe et j'ai donné des suggestions avec lequel je peux compenser. Je m'attends à ce que mes collègues prennent les même étapes. Si après l'avoir confronté avec mes autres collègues et aucun changement n'a été fait je vais proposer à mes autres collègues qu'on aille voir l'enseignant en équipe et demander de faire une rencontre avec le parasite. Si rien change encore, encore une fois en équipe il faudra aller voir l'enseignant et demander que le parasite soit retiré de l'équipe en montrant plusieurs preuves. 
 ---
