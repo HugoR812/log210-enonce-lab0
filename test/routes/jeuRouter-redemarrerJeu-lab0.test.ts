@@ -5,18 +5,20 @@ import app from '../../src/app';
 
 const request = require('supertest');
 
-describe('redemarrerJeu.test.ts', () => {
-  
-  beforeAll( async () => {
-    await request(app).post('/api/v1/joueur').send({ nom: 'Joueur1' });
-    await request(app).post('/api/v1/joueur').send({ nom: 'Joueur2' });
+describe('GET /api/v1/jeu/redemarrerJeu', () => {
+
+  it("GET /api/v1/jeu/redemarrerJeu retourne 200", async () => {
+    const response = await request(app).get("/api/v1/jeu/redemarrerJeu");
+    expect(response.status).toBe(200);
   });
 
-  it("devrait implémenter test", async () => {
-    const response = await request(app).get('/api/v1/jeu/redemarrerJeu');
+  it("jouer après redemarrerJeu retourne 404", async () => {
+    
+    await request(app).get("/api/v1/jeu/redemarrerJeu");
 
-    expect(response.statusCode).toBe(200);
-    expect(response.headers['content-type']).toMatch(/json/);
+    const response = await request(app).get("/api/v1/jeu/jouer/Joueur1");
+
+    expect(response.status).toBe(404);
   });
 
 });

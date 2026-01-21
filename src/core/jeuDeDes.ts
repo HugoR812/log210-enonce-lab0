@@ -88,7 +88,7 @@ export class JeuDeDes {
     }
 
     
-    public redemarrerJeu(): void {
+    public redemarrerJeu() {
         this._joueurs.clear();
     }
 }
