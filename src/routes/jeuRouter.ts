@@ -62,7 +62,7 @@ export class JeuRouter {
       const resultat = this._controleurJeu.jouer(nom);
       const resultatObj = JSON.parse(resultat);
       // flash un message selon le résultat
-      const key = resultatObj.somme == 7 ? 'win' : 'info';
+      const key = resultatObj.somme <= 10 ? 'win' : 'info';
       req.flash(key,
         `Résultat pour ${nom}: ${resultatObj.v1} + ${resultatObj.v2} = ${resultatObj.somme}`);
       res.status(200)
